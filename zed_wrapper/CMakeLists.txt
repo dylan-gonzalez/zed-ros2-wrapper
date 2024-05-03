@@ -137,12 +137,6 @@ install(DIRECTORY
   DESTINATION share/${PROJECT_NAME}
 )
 
-# Install URDF files
-install(DIRECTORY
-  urdf
-  DESTINATION share/${PROJECT_NAME}
-)
-
 # Install LAUNCH files
 install(DIRECTORY
   launch

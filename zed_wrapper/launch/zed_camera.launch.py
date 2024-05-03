@@ -39,7 +39,7 @@ default_config_common = os.path.join(
 
 # URDF/xacro file to be loaded by the Robot State Publisher node
 default_xacro_path = os.path.join(
-    get_package_share_directory('zed_wrapper'),
+    get_package_share_directory('zed_description'),
     'urdf',
     'zed_descr.urdf.xacro'
 )
