@@ -20,7 +20,6 @@
   <xacro:arg name="camera_name"   default="zed" />
   <xacro:arg name="camera_model"  default="zed" />
 
-  <xacro:include filename="$(find zed_wrapper)/urdf/zed_macro.urdf.xacro" />
-  <xacro:zed_camera name="$(arg camera_name)" model="$(arg camera_model)">
-  </xacro:zed_camera>
+  <xacro:include filename="$(find zed_description)/urdf/zed_macro.urdf.xacro" />
+  <xacro:zed_camera name="$(arg camera_name)" model="$(arg camera_model)" />
 </robot>

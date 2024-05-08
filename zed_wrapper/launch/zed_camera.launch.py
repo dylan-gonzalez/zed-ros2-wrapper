@@ -39,7 +39,7 @@ default_config_common = os.path.join(
 
 # URDF/xacro file to be loaded by the Robot State Publisher node
 default_xacro_path = os.path.join(
-    get_package_share_directory('zed_wrapper'),
+    get_package_share_directory('zed_description'),
     'urdf',
     'zed_descr.urdf.xacro'
 )
@@ -89,12 +89,6 @@ def launch_setup(context, *args, **kwargs):
     if (camera_name_val == ''):
         camera_name_val = 'zed'
 
-    config_camera_path = os.path.join(
-        get_package_share_directory('zed_wrapper'),
-        'config',
-        camera_model_val + '.yaml'
-    )
-
     # Robot State Publisher node
     rsp_node = Node(
         condition=IfCondition(publish_urdf),
@@ -126,7 +120,6 @@ def launch_setup(context, *args, **kwargs):
         parameters=[
             # YAML files
             config_common_path,  # Common parameters
-            config_camera_path,  # Camera related parameters
             # Overriding
             {
                 'use_sim_time': use_sim_time,
